@@ -1,0 +1,10 @@
+- block:
+  - name: Install MAAS and DB
+    snap:
+      name:
+        - maas
+        - maas-test-db
+  - name: Init maas
+    command:
+      cmd: "maas init region+rack --database-uri maas-test-db:///"
+  when: enable_maas

@@ -1,0 +1,5 @@
+iomemory_vsl_apt_packages:
+  - dkms
+  - git
+iomemory_vsl_repo: https://github.com/snuf/iomemory-vsl
+iomemory_vsl_dir: /root/iomemory-vsl

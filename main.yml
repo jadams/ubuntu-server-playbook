@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - ansible.builtin.include_vars:
+        dir: vars
+    - ansible.builtin.include_tasks:
+        file: "{{ item }}"
+      with_fileglob: tasks/*.yml

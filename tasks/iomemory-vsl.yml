@@ -1,0 +1,11 @@
+- name: Install req packages
+  apt:
+    name: "{{ iomemory_vsl_apt_packages }}"
+- name: Clone repo
+  git:
+    repo: "{{ iomemory_vsl_repo }}"
+    dest: "{{ iomemory_vsl_dir }}"
+- name: Install via make dkms
+  make:
+    chdir: "{{ iomemory_vsl_dir }}"
+    target: dkms
