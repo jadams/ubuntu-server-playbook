@@ -1,7 +1,9 @@
 ---
-- name: Update apt
-  ansible.builtin.apt:
-    update_cache: true
 - name: Install apt packages
   ansible.builtin.apt:
     name: "{{ apt_packages }}"
+    state: present
+    upgrade: dist
+    update_cache: yes
+    autoclean: yes
+    autoremove: yes
